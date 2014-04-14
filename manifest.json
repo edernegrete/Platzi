@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+
+  "name": "Platzi Notificaciones",
+  "options_page": "Options/option.html",
+
+  "description": "Esta extensión te ayuda a recordar eventos de la mejor plataforma de educación online",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "background":{
+       "page" :"background.html"
+  },
+  "permissions":[
+    "notifications",
+    "storage"
+  ],
+  "web_accessible_resources": [
+    "icon.png"
+  ]
+}
