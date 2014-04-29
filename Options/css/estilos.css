@@ -1,18 +1,20 @@
 a{text-decoration:none}
 body{background-color:#dcddd8;font-size:16px;font-family:'Source Code Pro';margin:0;padding:0}
-h1{text-align:center}
+h1,h2{text-align:center;margin:0}
 input{vertical-align:middle}
 input[type=checkbox]{width:100px;height:120px}
 section{background-color:#354b5e;border-radius:10px;margin:0 auto;width:820px}
-button{background:#dcddd8;border:none;box-shadow:0 0 20px #0ff;display:block;font-size:1em;height:30%;margin:0 auto;transition:1s all ease;width:30%;}
+select{background:#f3f3f3;border:1px solid #c1c1c1;border-radius:0;color:#585757;font-size:1.3em;font-size:13px;margin-top:1.5em;height:30px;line-height:100%;-webkit-appearance:none}
+button{background:#dcddd8;border:none;box-shadow:0 0 20px #0ff;display:block;font-size:1.3em;height:50%;margin:0 auto;transition:1s all ease;width:30%;}
 button:hover{box-shadow:none}
 .cursos div{width:820px;height:131px}
 .cursos .status{color:#ff5959}
+.cursos .tweet{text-align:center;position:fixed}
 .cursos .info{display:inline-block;}
 .cursos .info p{font-size:2em;margin-left:4em}
 .cursos .imagen{display:inline-block}
 .fondo{margin-top:1em}
-.tuit{background:#55acee}
+.horario{text-align:center;margin-top:3em}
 .diseño{background:url("../images/DiseñoWeb.jpg");background-size:300px 131px;background-repeat:no-repeat;background-position:right center}
 .frontend{background:url("../images/frontend.jpg");background-size:300px 131px;background-repeat:no-repeat;background-position:right center}
 .backend{background:url("../images/backend.jpg");background-size:300px 131px;background-repeat:no-repeat;background-position:right center}
