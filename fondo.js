@@ -20,12 +20,12 @@ setInterval(function(){relojsh()},200);
                     minutes = "0" + minutes;
                 }
 
-                if(month== 5 & day==6|| 8|| 13|| 15|| 20 || 22){
+                if(month==4 & day==6||8||13||15||20||22||){
                   horariosftw();
                 }
     function horariosftw(){
-      if(val == 'centroamerica'){
-                    if(hours==18 & minutes==50){
+                if(val == 'centroamerica'){
+                    if(hours==18 & minutes==5){
                       notification.show();
                     }
                 }else if (val=='sud_america'){
@@ -52,6 +52,10 @@ setInterval(function(){relojsh()},200);
                   if(hours==17 & minutes==50){
                       notification.show();
                   }                 
+                }else{
+                  if(hours==21 & minutes==50){
+                    notification.show();
+                  }
                 }
     }
                 
