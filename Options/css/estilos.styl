@@ -2,6 +2,7 @@ fondo = #DCDDD8
 section = #354B5E
 a
 	text-decoration none
+	margin 0
 body
 	background-color fondo
 	font-size 16px
@@ -14,24 +15,21 @@ h2
 	margin 0
 input
 	vertical-align middle
-input[type=checkbox]
-	width 100px
-	height 120px
 section
 	background-color section
 	border-radius 10px
 	margin 0 auto
+	height 200px
 	width 820px
 select
-	background: #F3F3F3;
+	background #F3F3F3
 	border 1px solid #C1C1C1
 	border-radius 0
 	color #585757
 	font-size 1.3em
 	font-size 13px
-	margin-top 1.5em
 	height 30px
-	line-height 100%;
+	margin-bottom 1.5em
 	-webkit-appearance none
 button
 	background fondo
@@ -45,64 +43,13 @@ button
 	width 30%
 	&:hover
 		box-shadow none
-.cursos
-	div
-		width 820px
-		height 131px
-	.status
-		color #FF5959
-	.tweet
-		text-align center
-		position fixed
-	.info
-		display inline-block
-		p
-			font-size 2em
-			margin-left 4em
-	.imagen
-		display inline-block
+	&:active
+		box-shadow inset 0px 0px 20px #152525
+
 .fondo
 	margin-top 1em
 .horario
 	text-align center
 	margin-top 3em
-.diseño
-	background url('../images/DiseñoWeb.jpg')
-	background-size 300px 131px
-	background-repeat no-repeat
-	background-position right center
-.frontend
-	background url('../images/frontend.jpg')
-	background-size 300px 131px
-	background-repeat no-repeat
-	background-position right center
-.backend
-	background url("../images/backend.jpg")
-	background-size 300px 131px
-	background-repeat no-repeat
-	background-position right center
-.laravel
-	background url("../images/laravel.jpg")
-	background-position right center
-	background-repeat no-repeat
-	background-size 300px 131px
-.marketing
-	background url('../images/marketing.jpg')
-	background-size 300px 131px
-	background-repeat no-repeat
-	background-position right center
-.ios
-	background url('../images/ios.png')
-	background-size 300px 131px
-	background-repeat no-repeat
-	background-position right center
-.android
-	background url('../images/android.png')
-	background-size 300px 131px
-	background-repeat no-repeat
-	background-position right center
-.ux
-	background url('../images/user.png')
-	background-size 300px 131px
-	background-repeat no-repeat
-	background-position right center
+.tweet
+	text-align center

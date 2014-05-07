@@ -1,10 +1,9 @@
 var notification = webkitNotifications.createNotification(
-  'icon.png',  // icon url - can be relative
-  'Clase en Vivo',  // notification title
-  'En 10 min empieza la clase de Laravel'  // notification body text
+  'icon.png',  
+  'Clase en Vivo', 
+  'En 10 min comienza la clase de Laravel'
 );
 var val = localStorage['horario'];
-
 setInterval(function(){relojsh()},200);
   function relojsh() {
                 var now = new Date();
@@ -20,15 +19,15 @@ setInterval(function(){relojsh()},200);
                     minutes = "0" + minutes;
                 }
 
-                if(month==4 & day==6||8||13||15||20||22||){
+                if(month==4 & day==6||8||13||15||20||22){
                   horariosftw();
                 }
     function horariosftw(){
                 if(val == 'centroamerica'){
-                    if(hours==18 & minutes==5){
+                    if(hours==18 & minutes==50){
                       notification.show();
                     }
-                }else if (val=='sud_america'){
+                }else if (val=='caribe'){
                   if(hours==17 & minutes==50){
                     notification.show();
                   }
@@ -45,18 +44,17 @@ setInterval(function(){relojsh()},200);
 
                   }
                 }else if (val=='europa'){
-                  if(hours==18 & minutes==50){
+                  if(hours==11 & minutes==50){
                       notification.show();
                   }
                 }else if (val=='england'){  
-                  if(hours==17 & minutes==50){
+                  if(hours==10 & minutes==50){
                       notification.show();
                   }                 
                 }else{
-                  if(hours==21 & minutes==50){
+                  if(hours==20 & minutes==50){
                     notification.show();
                   }
                 }
-    }
-                
+    }                
 }
