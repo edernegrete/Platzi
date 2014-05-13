@@ -19,12 +19,12 @@ setInterval(function(){relojsh()},200);
                     minutes = "0" + minutes;
                 }
 
-                if(month==4 & day==6||8||13||15||20||22){
+                if(month==4 & day==6||day==8||day==13||day==15||day==20||day==22){
                   horariosftw();
                 }
     function horariosftw(){
                 if(val == 'centroamerica'){
-                    if(hours==18 & minutes==50){
+                    if(hours==19 & minutes==50){
                       notification.show();
                     }
                 }else if (val=='caribe'){
