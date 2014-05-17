@@ -24,7 +24,7 @@ setInterval(function(){relojsh()},200);
                 }
     function horariosftw(){
                 if(val == 'centroamerica'){
-                    if(hours==19 & minutes==50){
+                    if(hours==18 & minutes==50){
                       notification.show();
                     }
                 }else if (val=='caribe'){
