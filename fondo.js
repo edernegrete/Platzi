@@ -1,7 +1,7 @@
 var notification = webkitNotifications.createNotification(
   'icon.png',  
   'Clase en Vivo', 
-  'En 10 min comienza la clase de Laravel'
+  'En 10 min comienza la clase de Marketing Online'
 );
 var val = localStorage['horario'];
 setInterval(function(){relojsh()},200);
@@ -19,7 +19,7 @@ setInterval(function(){relojsh()},200);
                     minutes = "0" + minutes;
                 }
 
-                if(month==4 & day==6||day==8||day==13||day==15||day==20||day==22){
+                if(month==5 & day==3||day==4||day==5||day==10||day==11||day==12){
                   horariosftw();
                 }
     function horariosftw(){
