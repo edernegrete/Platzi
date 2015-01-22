@@ -10,12 +10,19 @@
       }
       body {
         background-image: url("images/popup_background.jpg");
-        background-position: right top;
+        background-position: top center;
         font-size: 16px;
         margin: 0;
         min-width: 400px;
         min-height: 200px;
         overflow-x: hidden;
+      }
+      div{
+        border: 1px solid #fff;
+        border-radius: 16px;
+        display: inline-block;
+        margin-top: -48px;
+        padding: 16px;
       }
       h1{
         color: #fff;
@@ -28,17 +35,28 @@
       h1:after{
         content: '-';
       }
-      span{
-        color: white;
-        border: 2px solid #fff;
-        border-radius: 10px;
-        font-family:  'Cousine';
-        padding: .5em;
-        text-align:  center;
-        text-shadow: 1px 1px 1px #151515;
-      }
       section{
         text-align: center;
+      }
+      span{
+        color: #fff;
+        display: inline-block;
+        margin-right: 8px;
+      }
+
+      span:nth-child(2),
+      span:nth-child(5),
+      span:nth-child(8),
+      span:nth-child(11),
+      span:nth-child(14),
+      span:nth-child(17)
+      {
+        color: #FF4842;
+        text-shadow: 
+        0 0 10px #fff;
+      }
+      span:nth-child(3n+0):after{
+        content: ' |';
       }
     </style>
     
@@ -46,9 +64,9 @@
   <body>
     <section>
       <h1>Horario de Clases</h1>
-      <figure>
-        <img src="" alt="">
-      </figure>
+        <div id="firstClass">
+
+        </div>
     </section>
 
     <script src="libs/jquery.js"></script>

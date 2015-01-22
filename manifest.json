@@ -13,8 +13,7 @@
        "page" :"background.html"
   },
   "permissions":[
-    "notifications",
-    "storage"
+    "notifications"
   ],
   "web_accessible_resources": [
     "icon.png"
