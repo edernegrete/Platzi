@@ -21,13 +21,11 @@
         border: 1px solid #fff;
         border-radius: 16px;
         display: inline-block;
-        margin-top: -48px;
         padding: 16px;
       }
       h1{
         color: #fff;
         font-family: 'Droid Sans';
-        line-height: 100px;
       }
       h1:before{
         content: '-';
@@ -35,6 +33,7 @@
       h1:after{
         content: '-';
       }
+      
       section{
         text-align: center;
       }
@@ -58,12 +57,17 @@
       span:nth-child(3n+0):after{
         content: ' |';
       }
+      #course{
+        color: #7DCD40;
+      } 
     </style>
     
   </head>
   <body>
     <section>
       <h1>Horario de Clases</h1>
+        <h2 id="course">
+        </h2>
         <div id="class">
             <img src="images/loading.gif" alt="" width="50px">
         </div>
