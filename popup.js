@@ -22,6 +22,7 @@ $(function (){
 		})
 		.done(function(data){
 			var courseName = data.query.results.strong;
+			localStorage['courseNameStorage'] = courseName;
 			var resOut = $('#course');
 			var html = '';
 			html = courseName;
