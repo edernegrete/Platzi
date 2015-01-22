@@ -3,19 +3,37 @@
   <head>
     <meta charset="utf-8">
     <title>Platzi Notificaciónes</title>
-    <link href='http://fonts.googleapis.com/css?family=Offside|Cousine' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans|Montserrat' rel='stylesheet' type='text/css'>
     <style>
+      a{
+        color: #FF4842;
+      }
       body {
-        background: #008FD5;
+        background-image: url("images/popup_background.jpg");
+        background-position: right top;
         font-size: 16px;
         margin: 0;
-        min-width: 330px;
+        min-width: 400px;
+        min-height: 200px;
         overflow-x: hidden;
+      }
+      h1{
+        color: #fff;
+        font-family: 'Droid Sans';
+        line-height: 100px;
+      }
+      h1:before{
+        content: '-';
+      }
+      h1:after{
+        content: '-';
       }
       span{
         color: white;
-        font-family:  'Cousine',;
-        font-size: 1.2em;
+        border: 2px solid #fff;
+        border-radius: 10px;
+        font-family:  'Cousine';
+        padding: .5em;
         text-align:  center;
         text-shadow: 1px 1px 1px #151515;
       }
@@ -23,16 +41,17 @@
         text-align: center;
       }
     </style>
-    <script src='jquery.js'></script>
-    <script src="popup.js"></script>
+    
   </head>
   <body>
     <section>
-      <h3>Selecciona tu horario:</h3>
+      <h1>Selecciona tu horario</h1>
       <span>
-        Dale click derecho al ícono de la extensión y ve a opciones :D
+        Ve a <a href="chrome-extension://cgfjcgdhpdicegegjjjjkcccpplmkoam/Options/option.html">Opciones</a> de la extensión
       </span>
     </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>   <script src="popup.js"></script>
   </body>
 </html>
 
