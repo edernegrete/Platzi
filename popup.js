@@ -6,7 +6,7 @@ $(function (){
 		})
 		.done(function(data){
 			var dates = data.query.results.span;
-			var resOut = $('#firstClass');
+			var resOut = $('#class');
 			var html = '';
 			for (var i=0; i<dates.length; i++){
 				var date = dates[i]
