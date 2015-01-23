@@ -1,5 +1,5 @@
 var className = localStorage['courseNameStorage'] ;
-var message = 'Está por comenzar la clase de '
+var message = 'Está por comenzar la clase del '
 var opt={
   type: 'basic',
   title: 'Clase en Vivo',
