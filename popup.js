@@ -11,17 +11,15 @@ $(function (){
 			var dates = data.query.results.span;
 			var resOut = $('#class');
 			var html = '';
-			var days = []
+			var days = [];
 			for (var i=0; i<dates.length; i++){
 				var date = dates[i]
 				html+='<span>'+ date +'</span>';
 				 if(isNaN(dates[i]) === false){
 				 	days.push(dates[i])
 				}
-				localStorage ['days'] = days;
-
 			}
-			console.log(days)
+			localStorage.setObj('days', days);
 			resOut.html(html);
 		});
 
@@ -64,4 +62,11 @@ $(function (){
 			resOutNigth.html(night)
 
 		})
+
+	Storage.prototype.setObj = function(key, obj) {
+    	return this.setItem(key, JSON.stringify(obj))
+	}
+	Storage.prototype.getObj = function(key) {
+    	return JSON.parse(this.getItem(key))
+	}
 });

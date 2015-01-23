@@ -1,6 +1,5 @@
 var className = localStorage['courseNameStorage'] ;
 var message = 'Está por comenzar la clase del '
-var days = localStorage['days'];
 var opt={
   type: 'basic',
   title: 'Clase en Vivo',
@@ -15,3 +14,8 @@ chrome.notifications.onClicked.addListener(openUrl);
 function openUrl () {
 	window.open("http://cursos.mejorando.la/")
 }
+Storage.prototype.getObj = function(key) {
+    	return JSON.parse(this.getItem(key))
+}
+var storedDays = localStorage.getObj('days');
+
