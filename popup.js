@@ -1,4 +1,7 @@
 $(function (){
+	Storage.prototype.setObj = function(key, obj) {
+    	return this.setItem(key, JSON.stringify(obj))
+	}
 	var schedule = "https://query.yahooapis.com/v1/public/yql?q=select%20content%20from%20html%20where%20url%3D%22http%3A%2F%2Fmejorando.la%2Fhorarios%2F%22%20and%20xpath%20%3D%20'%2F%2Fdiv%5B%40class%3D%22ScheduleDateList-date%20icon-calendar%22%5D%2Fspan'&format=json&diagnostics=true&callback=";
 	var course = "https://query.yahooapis.com/v1/public/yql?q=select%20content%20from%20html%20where%20url%3D%22http%3A%2F%2Fmejorando.la%2Fhorarios%2F%22%20and%20xpath%20%3D%20'%2F%2Fdiv%5B%40class%3D%22ScheduleCountdown-courseInfo%22%5D%2Fspan%5B%40class%3D%22ScheduleCountdown-courseName%22%5D%2Fstrong'&format=json&diagnostics=true&callback="
 	var location = "https://query.yahooapis.com/v1/public/yql?q=select%20content%20from%20html%20where%20url%3D%22http%3A%2F%2Fmejorando.la%2Fhorarios%2F%22%20and%20xpath%20%3D%20'%2F%2Fdiv%5B%40class%3D%22ScheduleCountdown-courseInfo%22%5D%2Fspan%5B%40class%3D%22ScheduleCountdown-courseInfoLocation%20icon-marker%22%5D%2Fspan'&format=json&diagnostics=true&callback="
@@ -12,13 +15,17 @@ $(function (){
 			var resOut = $('#class');
 			var html = '';
 			var days = [];
+			var month_day = []
 			for (var i=0; i<dates.length; i++){
 				var date = dates[i]
 				html+='<span>'+ date +'</span>';
 				 if(isNaN(dates[i]) === false){
 				 	days.push(dates[i])
+				}else{
+					month_day.push(dates[i])
 				}
 			}
+			localStorage.setObj('month_day', month_day);
 			localStorage.setObj('days', days);
 			resOut.html(html);
 		});
@@ -63,10 +70,5 @@ $(function (){
 
 		})
 
-	Storage.prototype.setObj = function(key, obj) {
-    	return this.setItem(key, JSON.stringify(obj))
-	}
-	Storage.prototype.getObj = function(key) {
-    	return JSON.parse(this.getItem(key))
-	}
+
 });
