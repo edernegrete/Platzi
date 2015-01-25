@@ -6,7 +6,16 @@ $(function (){
 	var storedmonth = localStorage.getObj('month_day');
 	var className = localStorage['courseNameStorage'] ;
 	var message = 'Está por comenzar la clase del '
+	var months_list = ['Ene','Feb','Mar','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
 	var months = [];
+	var opt={
+	  	type: 'basic',
+	  	title: 'Clase en Vivo',
+	  	message: '',
+	  	priority: 1,
+	  	iconUrl: 'icon.png'
+	};
+	opt['message'] = message + className;
 	function getMonth(){
 		for (var i = 0; i<storedmonth.length; i++){
 			if((i%2) != 1){
@@ -28,43 +37,31 @@ $(function (){
                 if (minutes < 10) {
                     minutes = "0" + minutes;
                 }
-                hell(day,month);
+                matching(day,month);
     }
-    function hell (day,month) {
-        for (var i=0; i<storedDays.length; i++){
-        	if(storedDays[i] == day){
-        	  console.log('runs when is the course day!')   
-            }
-        }
+    function matching (day,month) {
+        for (var i = 0; i<months_list.length; i++){
+  			if(months[0] == months_list[i]){
+     			if(months_list.indexOf(months_list[i])==month){
+        			for(var k=0; k<storedDays.length; i++){
+                         if(day == storedDays[i]){
+                              showNotification();
+                         }
+                    }
+				}
+			}
+		}
+    }
+    function showNotification(){
+    	chrome.notifications.create('id', opt, function(id){})
+		chrome.notifications.onClicked.addListener(function(){
+			window.open("http://cursos.mejorando.la/")
+		});
+
     }
 
-    getMonth();
+   	getMonth();
   	setInterval(function(){clock()},200);
-
-
-
-
-
-
-
-
-
-
-	// var opt={
-	//   	type: 'basic',
-	//   	title: 'Clase en Vivo',
-	//   	message: '',
-	//   	priority: 1,
-	//   	iconUrl: 'icon.png'
-	// };
-	// opt['message'] = message + className;
-
-	// chrome.notifications.create('id', opt, function(id){})
-	// chrome.notifications.onClicked.addListener(function(){
-	// 	window.open("http://cursos.mejorando.la/")
-	// });
-
-
 });
 
 
