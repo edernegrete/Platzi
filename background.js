@@ -20,6 +20,7 @@ $(function (){
 		for (var i = 0; i<storedmonth.length; i++){
 			if((i%2) != 1){
    				months.push(storedmonth[i])
+          console.log(months)
 			}
 
 		}
