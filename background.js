@@ -20,7 +20,6 @@ $(function (){
 		for (var i = 0; i<storedmonth.length; i++){
 			if((i%2) != 1){
    				months.push(storedmonth[i])
-          console.log(months)
 			}
 
 		}
@@ -41,16 +40,13 @@ $(function (){
                 matching(day,month);
     }
     function matching (day,month) {
-        for (var i = 0; i<months_list.length; i++){
-  			if(months[0] == months_list[i]){
-     			if(months_list.indexOf(months_list[i])==month){
-        			for(var k=0; k<storedDays.length; i++){
-                         if(day == storedDays[i]){
-                              showNotification();
-                         }
-                    }
-				}
-			}
+      var indexOfmonth = months_list.indexOf(months[0])
+     			if(indexOfmonth==month){
+        		for(var i=0; i<storedDays.length; i++){
+              if(day == storedDays[i]){
+                showNotification();
+              }
+          }
 		}
     }
     function showNotification(){
