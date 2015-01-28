@@ -60,14 +60,15 @@ $(function (){
 		.done(function(data) {
 			var day_night = data.query.results.span;
 			var day = day_night[0];
+			localStorage['day_schedule'] = day;
 			var night = day_night[1];
+			localStorage['night_schedule'] = night;
 			var resOutDay = $('#scheduleDay');
 			var resOutNigth = $('#scheduleNight');
 			var htmlDay= ' ';
 			var htmlNigth=' ';
 			resOutDay.html(day);
 			resOutNigth.html(night)
-
 		})
 
 
