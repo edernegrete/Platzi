@@ -23,11 +23,14 @@ $(function (){
     var dayHour = '';
     var nightHour = '';
     var daystartHour;
+    var nightstartHour;
+    var dayPM;
+    var nightPM;
     for (var i = 0; day_schedule[i]!= '>'; i++){
       dayStartingHour.push(day_schedule[i])
     }
-    for (var k = 0; night_schedule[k]!= '>'; k++){
-      nightStartingHour.push(night_schedule[k])
+    for (var j = 0; night_schedule[j]!= '>'; j++){
+      nightStartingHour.push(night_schedule[j])
     }
     nightHourstring = nightStartingHour.toString();
     nightHour = nightHourstring.replace(/,/g, "");
@@ -35,17 +38,28 @@ $(function (){
     dayHour = dayHourstring.replace(/,/g, "");
     if(dayHour[1]==':'){
       var dayHourTwodigits = 0 + dayHour;
-      daySchedulehour = dayHourTwodigits[0] + dayHourTwodigits [1]
+      daystartHour = dayHourTwodigits[0] + dayHourTwodigits [1]
     }else{
-      daySchedulehour = dayHour[0] + dayHour[1]
+      daystartHour = dayHour[0] + dayHour[1]
     }
     if(nightHour[1]==':'){
       var nightHourTwodigits = 0 + nightHour;
-      nightSchedulehour = nightHourTwodigits[0] + nightHourTwodigits [1]
+      nightstartHour = nightHourTwodigits[0] + nightHourTwodigits [1]
     } else{
-      nightSchedulehour = nightHour[0] + nightHour[1]
+      nightstartHour = nightHour[0] + nightHour[1]
     }
-    console.log(daySchedulehour)
+    dayPM = dayHour.search('p');
+    nightPM = nightHour.search('p');
+    if(dayPM != -1){
+      daySchedulehour = Number (daystartHour) +12;
+    }else{
+      daySchedulehour = daystartHour;
+    }
+    if(nightPM != -1){
+      nightSchedulehour = Number (nightstartHour) +12;
+    }else{
+      nightSchedulehour = nightstartHour;
+    }
   }
 	function clock() {
                 var now = new Date();
@@ -70,7 +84,9 @@ $(function (){
 		if(indexOfmonth==month){
 		  for(var i=0; i<storedDays.length; i++){
         if(day == storedDays[i]){
-          showNotification();
+          if(hours == daySchedulehour || nightSchedulehour){
+            showNotification();
+          }
         }
       }
     }
@@ -94,7 +110,6 @@ $(function (){
 
    	getMonth();
     getHours();
-
   	setInterval(function(){clock()},200);
 });
 
