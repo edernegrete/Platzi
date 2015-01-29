@@ -15,7 +15,8 @@
   "permissions":[
     "notifications"
   ],
-  "web_accessible_resources": [
-    "icon.png"
-  ]
+  "icons": { 
+    "16": "icon.png",
+    "128": "icon128.png" 
+  }
 }

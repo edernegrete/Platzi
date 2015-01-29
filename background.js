@@ -50,16 +50,18 @@ $(function (){
     }
     dayPM = dayHour.search('p');
     nightPM = nightHour.search('p');
-    if(dayPM != -1){
+   
+    if(dayPM == -1){
       daySchedulehour = Number (daystartHour) +12;
     }else{
       daySchedulehour = daystartHour;
     }
-    if(nightPM != -1){
+    if(nightPM == -1){
       nightSchedulehour = Number (nightstartHour) +12;
     }else{
       nightSchedulehour = nightstartHour;
     }
+
   }
 	function clock() {
                 var now = new Date();
@@ -81,10 +83,12 @@ $(function (){
     var storedDays = localStorage.getObj('days');
     var months_list = ['Ene','Feb','Mar','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
     var indexOfmonth = months_list.indexOf(months[0]);
+    var dayHourNofitication = daySchedulehour - 1;
+    var nightHourNotification = nightSchedulehour -1;
 		if(indexOfmonth==month){
 		  for(var i=0; i<storedDays.length; i++){
         if(day == storedDays[i]){
-          if(hours == daySchedulehour || nightSchedulehour){
+          if(hours == dayHourNofitication || nightHourNotification && minutes==50){
             showNotification();
           }
         }
