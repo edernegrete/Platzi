@@ -51,12 +51,12 @@ $(function (){
     dayPM = dayHour.search('p');
     nightPM = nightHour.search('p');
    
-    if(dayPM == -1){
+    if(dayPM != -1){
       daySchedulehour = Number (daystartHour) +12;
     }else{
       daySchedulehour = daystartHour;
     }
-    if(nightPM == -1){
+    if(nightPM != -1){
       nightSchedulehour = Number (nightstartHour) +12;
     }else{
       nightSchedulehour = nightstartHour;
@@ -115,6 +115,7 @@ $(function (){
    	getMonth();
     getHours();
   	setInterval(function(){clock()},200);
+
 });
 
 
