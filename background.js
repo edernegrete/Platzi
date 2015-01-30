@@ -52,16 +52,23 @@ $(function (){
     nightPM = nightHour.search('p');
    
     if(dayPM != -1){
-      daySchedulehour = Number (daystartHour) +12;
+      if(daystartHour<12){
+        daySchedulehour = Number (daystartHour) +12;
+      }else{
+        daySchedulehour = daystartHour
+      }
     }else{
       daySchedulehour = daystartHour;
     }
     if(nightPM != -1){
-      nightSchedulehour = Number (nightstartHour) +12;
+      if(nightstartHour<12){
+        nightSchedulehour = Number (nightstartHour) +12;
+      }else{
+        nightSchedulehour = nightstartHour
+      }
     }else{
       nightSchedulehour = nightstartHour;
     }
-
   }
 	function clock() {
                 var now = new Date();
