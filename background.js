@@ -1,12 +1,16 @@
 $(function (){
+  /* extiende la funcionalidad de localstorage para poder pasar arrays, local
+  storage solo acepta strings por defecto */
 	Storage.prototype.getObj = function(key) {
     	return JSON.parse(this.getItem(key))
 	};
-
+  //variables globales
   var months = [];
   var daySchedulehour =''
   var nightSchedulehour = ''
-  
+  /*Agarramos el mes en el que va a ser el curso que ya tenemos guardado
+    en localstorage pero con un formato así [mes,dia,mes,dia].
+  */
 	function getMonth(){
     var storedmonth = localStorage.getObj('month_day');
 		for (var i = 0; i<storedmonth.length; i++){
@@ -15,6 +19,7 @@ $(function (){
 			}
 		}
 	}
+  /*Agarramos la hora en la que empezará el curso*/
   function getHours(){
     var day_schedule = localStorage['day_schedule'];
     var night_schedule = localStorage['night_schedule'];
@@ -70,6 +75,7 @@ $(function (){
       nightSchedulehour = nightstartHour;
     }
   }
+  //El reloj que estará comprobando la hora del computador
 	function clock() {
                 var now = new Date();
                 var hours = now.getHours();
@@ -85,8 +91,8 @@ $(function (){
                 }
                 matching(day,month,hours,minutes);
   }
+  //Hace el <<matching>> con el día, mes, horas y minutos para lanzar la notificacion
   function matching (day,month,hours,minutes) {
-
     var storedDays = localStorage.getObj('days');
     var months_list = ['Ene','Feb','Mar','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
     var indexOfmonth = months_list.indexOf(months[0]);
@@ -102,6 +108,7 @@ $(function (){
       }
     }
   }
+  //Declaramos la notificacion
   function showNotification(){
     var className = localStorage['courseNameStorage'];
     var message = 'Está por comenzar la clase del '
@@ -118,7 +125,7 @@ $(function (){
   	 window.open("http://cursos.mejorando.la/")
     });
   }
-
+   //ejecutamos las funciones
    	getMonth();
     getHours();
   	setInterval(function(){clock()},200);
