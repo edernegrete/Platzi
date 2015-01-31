@@ -122,7 +122,7 @@ $(function (){
     opt['message'] = message + className;
   	chrome.notifications.create('id', opt, function(id){})
     chrome.notifications.onClicked.addListener(function(){
-  	 window.open("http://cursos.mejorando.la/")
+  	 window.open("https://platzi.com/clases/")
     });
   }
    //ejecutamos las funciones
