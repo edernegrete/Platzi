@@ -101,8 +101,9 @@ $(function (){
 		if(indexOfmonth==month){
 		  for(var i=0; i<storedDays.length; i++){
         if(day == storedDays[i]){
-          if(hours == dayHourNofitication || nightHourNotification && minutes==50){
+          if(hours == dayHourNofitication || nightHourNotification && minutes==10){
             showNotification();
+
           }
         }
       }
@@ -121,9 +122,6 @@ $(function (){
     };
     opt['message'] = message + className;
   	chrome.notifications.create('id', opt, function(id){})
-    chrome.notifications.onClicked.addListener(function(){
-  	 window.open("https://platzi.com/clases/")
-    });
   }
    //ejecutamos las funciones
    	getMonth();
