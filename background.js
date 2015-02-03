@@ -111,7 +111,7 @@ $(function (){
   //Declaramos la notificacion
   function showNotification(){
     var className = localStorage['courseNameStorage'];
-    var message = 'Está por comenzar la clase del '
+    var message = 'En 10 minutos comienza la clase del curso de '
     var opt={
       type: 'basic',
       title: 'Clase en Vivo',
