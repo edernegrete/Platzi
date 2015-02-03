@@ -101,9 +101,8 @@ $(function (){
 		if(indexOfmonth==month){
 		  for(var i=0; i<storedDays.length; i++){
         if(day == storedDays[i]){
-          if(hours == dayHourNofitication || nightHourNotification && minutes==10){
+          if(hours == dayHourNofitication || nightHourNotification && minutes==58){
             showNotification();
-
           }
         }
       }
