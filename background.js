@@ -98,10 +98,16 @@ $(function (){
     var indexOfmonth = months_list.indexOf(months[0]);
     var dayHourNofitication = daySchedulehour - 1;
     var nightHourNotification = nightSchedulehour -1;
-		if(indexOfmonth==month){
-		  for(var i=0; i<storedDays.length; i++){
+    var today;
+    for(var i=0; i<storedDays.length; i++){
         if(day == storedDays[i]){
-          if(hours == dayHourNofitication || nightHourNotification && minutes==50){
+          today = storedDays[i]
+        }
+    }
+		if(indexOfmonth==month){
+		  if(day == today){
+        if(hours == dayHourNofitication || hours == nightHourNotification){
+          if(minutes == 50){
             showNotification();
           }
         }
@@ -121,6 +127,7 @@ $(function (){
     };
     opt['message'] = message + className;
   	chrome.notifications.create('id', opt, function(id){})
+
   }
    //ejecutamos las funciones
    	getMonth();
